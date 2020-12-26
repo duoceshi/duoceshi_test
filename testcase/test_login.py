@@ -11,14 +11,7 @@ website:www.duoceshi.cn
 '''
 此模块就是用来编写测试用例
 '''
-'''
-备注在Jenkins构建项目的时候、有可能找不到项目的地址、python项目的环境地址
-所以需要加入项目的地址
-'''
-import sys
-sys.path.append("C:\Git\duoceshi_test")
-#加入第三方环境的地址
-sys.path.append('C:\Python37\Lib\site-packages')
+
 
 import unittest
 from common.handle_excel import Read_Excel
@@ -28,12 +21,7 @@ from library.ddt import ddt,data
 from common.send_requests import Send_Requests
 from common.read_ini import read  #导入read对象
 
-case_file = os.path.join(data_path, 'apicases.xlsx')
-'''
-ddt数据驱动
-ddt模块里面有2个装饰器一个是ddt用来装饰类、一个是data用来装饰用例
-ddt可以循环去跑列表当中的接口用例
-'''
+case_file = os.path.join(data_path,'apicases.xlsx')
 
 @ddt
 class Test_Login(unittest.TestCase):

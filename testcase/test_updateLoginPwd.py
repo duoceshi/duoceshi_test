@@ -8,14 +8,6 @@ website:www.duoceshi.cn
 ===========================
 """
 
-'''
-备注在Jenkins构建项目的时候、有可能找不到项目的地址、python项目的环境地址
-所以需要加入项目的地址
-'''
-import sys
-sys.path.append("C:\Git\duoceshi_test")
-#加入第三方环境的地址
-sys.path.append('C:\Python37\Lib\site-packages')
 
 import unittest
 from common.read_ini import read

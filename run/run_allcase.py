@@ -12,10 +12,16 @@ website:www.duoceshi.cn
 备注在Jenkins构建项目的时候、有可能找不到项目的地址、python项目的环境地址
 所以需要加入项目的地址
 '''
+# import sys
+# sys.path.append("C:\Git\duoceshi_test")
+# #加入第三方环境的地址
+# sys.path.append('C:\Python37\Lib\site-packages')
+import os
 import sys
-sys.path.append("C:\Git\duoceshi_test")
-#加入第三方环境的地址
-sys.path.append('C:\Python37\Lib\site-packages')
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.abspath(os.path.dirname(curPath) + os.path.sep + ".")
+sys.path.append(rootPath)
+
 from common.handle_path import *
 import os
 import time
@@ -45,7 +51,7 @@ def sendMail():
 
 if __name__ == '__main__':
     auto_run()
-    sendMail()
+    # sendMail()
 
 
 
@@ -53,6 +59,7 @@ if __name__ == '__main__':
 #作业：
 #1.熟悉这个接口框架的代码、用Word去梳理一下
 #2.把查询用户接口用这个框架去写一遍、调通生成报告
+
 
 
 
