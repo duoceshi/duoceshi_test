@@ -7,21 +7,22 @@ Wechat:xiaoshubass
 website:www.duoceshi.cn
 ===========================
 """
-import os
-import sys
-import time
-from library.HTMLTestRunnerNew import HTMLTestRunner
-from library.mail3 import SendMail
-import unittest
-from common.handle_path import *
 
 '''
 备注在Jenkins构建项目的时候、有可能找不到项目的地址、python项目的环境地址
 所以需要加入项目的地址
 '''
-sys.path.append(base_path)
+import sys
+sys.path.append("C:\Git\duoceshi_test")
 #加入第三方环境的地址
 sys.path.append('C:\Python37\Lib\site-packages')
+from common.handle_path import *
+import os
+import time
+from library.HTMLTestRunnerNew import HTMLTestRunner
+from library.mail3 import SendMail
+import unittest
+
 
 #定义生成报告的绝对路径和文件名称
 now = time.strftime('%Y-%m-%d-%H-%M-%S')
